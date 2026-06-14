@@ -12,5 +12,4 @@ tests/
 .phpunit.result.cache
 phpunit.xml
 Dockerfile
-docker-entrypoint.sh
 *.md
