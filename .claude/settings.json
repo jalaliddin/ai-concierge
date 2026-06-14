@@ -21,7 +21,8 @@
       "Bash(npm install *)",
       "Bash(npm run *)",
       "Bash(npm list *)",
-      "Bash(mkdir -p /home/eversoft/Projects/khivatourguide.com/app/landing/i18n/locales && mv /home/eversoft/Projects/khivatourguide.com/app/landing/locales/*.json /home/eversoft/Projects/khivatourguide.com/app/landing/i18n/locales/ && ls /home/eversoft/Projects/khivatourguide.com/app/landing/i18n/locales/)"
+      "Bash(mkdir -p /home/eversoft/Projects/khivatourguide.com/app/landing/i18n/locales && mv /home/eversoft/Projects/khivatourguide.com/app/landing/locales/*.json /home/eversoft/Projects/khivatourguide.com/app/landing/i18n/locales/ && ls /home/eversoft/Projects/khivatourguide.com/app/landing/i18n/locales/)",
+      "Bash(docker compose *)"
     ],
     "additionalDirectories": [
       "/home/eversoft/Projects/khivatourguide.com/app/landing/locales"
