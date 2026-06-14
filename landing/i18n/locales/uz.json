@@ -1,0 +1,76 @@
+{
+  "nav": {
+    "home": "Bosh sahifa",
+    "transfers": "Transferlar",
+    "tours": "Sayohatlar",
+    "blog": "Blog",
+    "contact": "Aloqa"
+  },
+  "hero": {
+    "title": "Xivani kashf eting",
+    "subtitle": "Xivadan xususiy transfer, gid va sayohat xizmatlari. Onlayn buyurtma bering.",
+    "cta": "Buyurtma berish",
+    "cta2": "Transferlar"
+  },
+  "transfers": {
+    "title": "Transferlar",
+    "subtitle": "Xivadan aeroportlar, shaharlar va diqqatga sazovor joylarga xususiy transfer",
+    "from": "Qayerdan",
+    "to": "Qayerga",
+    "capacity": "Sig'im",
+    "duration": "Yo'l davomiyligi",
+    "price": "Narx",
+    "book": "Bron qilish",
+    "passengers": "yo'lovchi"
+  },
+  "services": {
+    "title": "Sayohatlar",
+    "subtitle": "Xivadan gid va ekskursiya xizmatlari",
+    "book": "Bron qilish",
+    "all": "Barchasi",
+    "tour": "Tur",
+    "excursion": "Ekskursiya",
+    "guide": "Gid",
+    "activity": "Faollik"
+  },
+  "cart": {
+    "title": "Buyurtmangiz",
+    "empty": "Savatcha bo'sh",
+    "total": "Jami",
+    "checkout": "To'lovga o'tish",
+    "clear": "Tozalash",
+    "add": "Savatchaga",
+    "added": "Qo'shildi!"
+  },
+  "checkout": {
+    "title": "Buyurtmani rasmiylashtirish",
+    "name": "Ismingiz",
+    "email": "Email",
+    "phone": "Telefon",
+    "date": "Kerakli sana",
+    "passengers": "Yo'lovchilar soni",
+    "notes": "Qo'shimcha izoh",
+    "submit": "Buyurtma berish",
+    "success": "Buyurtma qabul qilindi!",
+    "success_msg": "Buyurtmangiz qabul qilindi. Tez orada siz bilan bog'lanamiz.",
+    "order_number": "Buyurtma raqami"
+  },
+  "blog": {
+    "title": "Sayohat blogi",
+    "subtitle": "Xiva va O'zbekiston bo'yicha maslahatlar",
+    "read_more": "Batafsil"
+  },
+  "footer": {
+    "contact": "Biz bilan bog'laning",
+    "rights": "Barcha huquqlar himoyalangan",
+    "description": "Xivadan professional gid va transfer xizmati."
+  },
+  "track": {
+    "title": "Buyurtmani kuzatish",
+    "placeholder": "Buyurtma raqamini kiriting (masalan KH-ABC12345)",
+    "btn": "Qidirish",
+    "status": "Holat",
+    "items": "Mahsulotlar",
+    "total": "Jami"
+  }
+}

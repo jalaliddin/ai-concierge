@@ -1,0 +1,76 @@
+{
+  "nav": {
+    "home": "Home",
+    "transfers": "Transfers",
+    "tours": "Tours & Day Trips",
+    "blog": "Blog",
+    "contact": "Contact"
+  },
+  "hero": {
+    "title": "Discover Khiva",
+    "subtitle": "Private transfers, guided tours, and day trips from Khiva, Uzbekistan. Book online — easy and secure.",
+    "cta": "Book Now",
+    "cta2": "View Transfers"
+  },
+  "transfers": {
+    "title": "Transfers",
+    "subtitle": "Private transfers from Khiva to airports, cities, and attractions",
+    "from": "From",
+    "to": "To",
+    "capacity": "Capacity",
+    "duration": "Duration",
+    "price": "Price",
+    "book": "Book Transfer",
+    "passengers": "passengers"
+  },
+  "services": {
+    "title": "Tours & Day Trips",
+    "subtitle": "Guided tours and excursions from Khiva",
+    "book": "Book Tour",
+    "all": "All",
+    "tour": "Tour",
+    "excursion": "Excursion",
+    "guide": "Guide",
+    "activity": "Activity"
+  },
+  "cart": {
+    "title": "Your Booking",
+    "empty": "Your cart is empty",
+    "total": "Total",
+    "checkout": "Proceed to Checkout",
+    "clear": "Clear",
+    "add": "Add to Cart",
+    "added": "Added!"
+  },
+  "checkout": {
+    "title": "Complete Booking",
+    "name": "Your Name",
+    "email": "Email",
+    "phone": "Phone",
+    "date": "Preferred Date",
+    "passengers": "Number of Passengers",
+    "notes": "Special Requests",
+    "submit": "Place Order",
+    "success": "Booking Confirmed!",
+    "success_msg": "Your booking has been received. We will contact you shortly.",
+    "order_number": "Order Number"
+  },
+  "blog": {
+    "title": "Travel Blog",
+    "subtitle": "Tips and guides for visiting Khiva and Uzbekistan",
+    "read_more": "Read More"
+  },
+  "footer": {
+    "contact": "Contact Us",
+    "rights": "All rights reserved",
+    "description": "Professional tour guide and transfer service based in Khiva, Uzbekistan."
+  },
+  "track": {
+    "title": "Track Your Order",
+    "placeholder": "Enter order number (e.g. KH-ABC12345)",
+    "btn": "Track",
+    "status": "Status",
+    "items": "Items",
+    "total": "Total"
+  }
+}

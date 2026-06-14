@@ -1,0 +1,30 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(php --version)",
+      "Bash(npm --version)",
+      "Bash(composer --version)",
+      "Bash(mysql -uroot -proot -e \"SHOW DATABASES;\")",
+      "Bash(mysql -uroot -proot -e \"CREATE DATABASE IF NOT EXISTS khiva_tour CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;\")",
+      "Bash(composer require *)",
+      "Bash(composer install *)",
+      "Bash(php artisan *)",
+      "Bash(mysql -uroot -proot khiva_tour -e \"DROP TABLE IF EXISTS cache, cache_locks, job_batches, jobs, failed_jobs, sessions, password_reset_tokens, personal_access_tokens, users, migrations;\")",
+      "Bash(mysql -uroot -proot khiva_tour -e \"SHOW TABLES;\")",
+      "Bash(mysql -uroot -proot khiva_tour -e \"DROP TABLE IF EXISTS conversations, guests, guest_houses, users, sessions, password_reset_tokens, cache, cache_locks, failed_jobs, job_batches, jobs, migrations;\")",
+      "Bash(curl -s http://localhost:8000/api/landing/catalog)",
+      "Bash(python3 -m json.tool)",
+      "Bash(curl -s -X POST http://localhost:8000/api/login -H 'Content-Type: application/json' -d '{\"email\":\"admin@khivatourguide.com\",\"password\":\"admin123\"}')",
+      "Bash(mysql -uroot -proot khiva_tour -e \"SHOW TABLES LIKE 'personal%';\")",
+      "Bash(mysql -uroot -proot khiva_tour -se \"SELECT qr_token FROM guest_houses LIMIT 1;\")",
+      "Bash(curl -s http://localhost:8000/api/public/resolve/__CMDSUB_OUTPUT__)",
+      "Bash(npm install *)",
+      "Bash(npm run *)",
+      "Bash(npm list *)",
+      "Bash(mkdir -p /home/eversoft/Projects/khivatourguide.com/app/landing/i18n/locales && mv /home/eversoft/Projects/khivatourguide.com/app/landing/locales/*.json /home/eversoft/Projects/khivatourguide.com/app/landing/i18n/locales/ && ls /home/eversoft/Projects/khivatourguide.com/app/landing/i18n/locales/)"
+    ],
+    "additionalDirectories": [
+      "/home/eversoft/Projects/khivatourguide.com/app/landing/locales"
+    ]
+  }
+}

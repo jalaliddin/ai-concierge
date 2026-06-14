@@ -1,0 +1,102 @@
+services:
+  mysql:
+    image: mysql:8.0
+    restart: unless-stopped
+    environment:
+      MYSQL_DATABASE: khiva_tour
+      MYSQL_ROOT_PASSWORD: ${DB_PASSWORD:-root}
+    volumes:
+      - mysql_data:/var/lib/mysql
+    healthcheck:
+      test: ["CMD", "mysqladmin", "ping", "-h", "localhost", "-uroot", "-p${DB_PASSWORD:-root}"]
+      interval: 10s
+      timeout: 5s
+      retries: 10
+      start_period: 30s
+    networks:
+      - khiva
+
+  backend:
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+    restart: unless-stopped
+    environment:
+      APP_NAME: "Khiva Tour Guide"
+      APP_ENV: production
+      APP_KEY: ${APP_KEY}
+      APP_DEBUG: "false"
+      APP_TIMEZONE: Asia/Tashkent
+      APP_URL: ${APP_URL:-https://khivatourguide.com}
+      APP_PUBLIC_URL: ${APP_PUBLIC_URL:-https://khivatourguide.com}
+      LANDING_URL: ${LANDING_URL:-https://khivatourguide.com}
+      DB_CONNECTION: mysql
+      DB_HOST: mysql
+      DB_PORT: 3306
+      DB_DATABASE: khiva_tour
+      DB_USERNAME: root
+      DB_PASSWORD: ${DB_PASSWORD:-root}
+      GEMINI_API_KEY: ${GEMINI_API_KEY}
+      GEMINI_MODEL: ${GEMINI_MODEL:-gemini-2.0-flash}
+      TELEGRAM_BOT_TOKEN: ${TELEGRAM_BOT_TOKEN}
+      TELEGRAM_CHAT_ID: ${TELEGRAM_CHAT_ID}
+      MAIL_MAILER: ${MAIL_MAILER:-smtp}
+      MAIL_HOST: ${MAIL_HOST:-smtp.gmail.com}
+      MAIL_PORT: ${MAIL_PORT:-587}
+      MAIL_USERNAME: ${MAIL_USERNAME}
+      MAIL_PASSWORD: ${MAIL_PASSWORD}
+      MAIL_FROM_ADDRESS: ${MAIL_FROM_ADDRESS:-noreply@khivatourguide.com}
+      CACHE_STORE: file
+      SESSION_DRIVER: file
+      QUEUE_CONNECTION: sync
+    volumes:
+      - backend_storage:/var/www/backend/storage
+    depends_on:
+      mysql:
+        condition: service_healthy
+    networks:
+      - khiva
+
+  landing:
+    build:
+      context: ./landing
+      dockerfile: Dockerfile
+      args:
+        NUXT_PUBLIC_API_BASE: /api
+        NUXT_PUBLIC_SITE_URL: ${NUXT_PUBLIC_SITE_URL:-https://khivatourguide.com}
+        NUXT_PUBLIC_WHATSAPP: ${NUXT_PUBLIC_WHATSAPP:-+998935001234}
+        NUXT_PUBLIC_TELEGRAM: ${NUXT_PUBLIC_TELEGRAM:-@khivatourguide}
+    restart: unless-stopped
+    environment:
+      NUXT_PUBLIC_API_BASE: /api
+      NUXT_PUBLIC_SITE_URL: ${NUXT_PUBLIC_SITE_URL:-https://khivatourguide.com}
+      NUXT_PUBLIC_WHATSAPP: ${NUXT_PUBLIC_WHATSAPP:-+998935001234}
+      NUXT_PUBLIC_TELEGRAM: ${NUXT_PUBLIC_TELEGRAM:-@khivatourguide}
+      NUXT_API_BASE_INTERNAL: http://backend:8000/api
+    depends_on:
+      - backend
+    networks:
+      - khiva
+
+  nginx:
+    build:
+      context: .
+      dockerfile: nginx/Dockerfile
+    restart: unless-stopped
+    ports:
+      - "8094:80"
+    depends_on:
+      - backend
+      - landing
+    networks:
+      - khiva
+
+volumes:
+  mysql_data:
+    driver: local
+  backend_storage:
+    driver: local
+
+networks:
+  khiva:
+    driver: bridge
