@@ -80,7 +80,10 @@ class GuestHouseController extends Controller
 
     public function qrCode(GuestHouse $guestHouse): \Illuminate\Http\Response
     {
-        $png = $this->qr->generatePng($guestHouse);
-        return response($png, 200)->header('Content-Type', 'image/png');
+        $svg = $this->qr->generateSvg($guestHouse);
+        $filename = \Illuminate\Support\Str::slug($guestHouse->name) . '-qr.svg';
+        return response($svg, 200)
+            ->header('Content-Type', 'image/svg+xml')
+            ->header('Content-Disposition', "attachment; filename=\"{$filename}\"");
     }
 }
